@@ -6,7 +6,7 @@ from app.application.dto import (
     AchievementResultDTO,
     GetAchievementListDTO, AchievementListDTO,
 )
-from app.application.protocols import UoW
+from app.application.protocols.uow import UoW
 from app.domain import services
 
 logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ async def create_achievement(
         await gateway['check_achievement'](name=data.name)
     )
     achievement = services.create_achievement(**data.model_dump())
-    achievement = await gateway['create_achievement_user'](
+    achievement = await gateway['create_achievement'](
         id=achievement.id,
         name=achievement.name,
         number_points=achievement.number_points,

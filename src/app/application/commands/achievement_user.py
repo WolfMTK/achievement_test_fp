@@ -11,7 +11,7 @@ from app.application.dto import (
     UserInfoDTO,
     UserWithMaxPointsDiffResultDTO, UserWithMinPointsDiffResultDTO,
 )
-from app.application.protocols import UoW
+from app.application.protocols.uow import UoW
 from app.domain import services
 
 logger = logging.getLogger(__name__)

@@ -34,8 +34,7 @@ def create_achievement(
 def get_achievements(
         session: AsyncSession
 ) -> Callable[[int, int], Awaitable[ScalarResult[Achievements]]]:
-    async def wrapper(limit: int, offset: int) -> ScalarResult[
-        Achievements]:
+    async def wrapper(limit: int, offset: int) -> ScalarResult[Achievements]:
         """
         Получить все достижения.
 
